@@ -38,6 +38,11 @@ import sys
 import os
 
 config = environment.validate(sys.argv[1])
+# Optional extra args: preprocess only these markdown files (used by
+# build-locally.sh WATCH=1 to update single pages of an existing build).
+only_files = [os.path.abspath(f) for f in sys.argv[3:]]
+if only_files:
+    config["markdown_files"] = only_files
 qa.initialize(config)
 
 metadata.run(config)
@@ -46,7 +51,8 @@ macros.run(config)
 linkresolver.run(config)
 # generate links to known targets
 linkresolver.apply(config)
-patch_header_nav.patch(sys.argv[1], sys.argv[2])
+if not only_files:
+    patch_header_nav.patch(sys.argv[1], sys.argv[2])
 references_resolver.run(config)
 shortcodes_resolver.run(config)
 images_path_resolver.run(config)
