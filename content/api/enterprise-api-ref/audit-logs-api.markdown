@@ -143,15 +143,16 @@ HTTP 200 OK
 
 ### Allowed object types
 
-| Object Type         | Description                                  |
-| ------------------- | -------------------------------------------- |
-| User                | User account                                 |
-| Role                | Role definition                              |
-| Settings            | System, Mail, VCS or Authentication settings |
-| Federated reporting | Federated reporting configuration            |
-| Group               | Host groups                                  |
-| Host                | Host configuration                           |
-| Build project       | Build project configuration                  |
+| Object Type           | Description                                     |
+| --------------------- | ----------------------------------------------- |
+| User                  | User account                                    |
+| Role                  | Role definition                                 |
+| Settings              | System, Mail, VCS or Authentication settings    |
+| Federated reporting   | Federated reporting configuration               |
+| Group                 | Host groups                                     |
+| Host                  | Host configuration                              |
+| Build project         | Build project configuration                     |
+| Personal access token | Personal access token generation and revocation |
 
 ## Get audit logs actors
 
